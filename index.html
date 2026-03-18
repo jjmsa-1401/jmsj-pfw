@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Jaguines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/my-logo.ico">
+</head>
+<body>
+
+  <!-- Lightning canvas — fixed behind everything -->
+  <canvas id="lightning-canvas"></canvas>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="resume.html">Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <span class="toggle-icon icon-moon">🌙</span>
+        <span class="toggle-icon icon-sun">☀️</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-side-label">
+      <span>Portfolio</span>
+      <span class="hero-side-dot"></span>
+      <span>2025</span>
+    </div>
+
+    <div class="hero-content">
+
+      <!-- LEFT: text -->
+      <div class="hero-text">
+        <div class="hero-eyebrow-row">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Portfolio · 2025</span>
+        </div>
+        <div class="hero-greeting">Hello, I'm</div>
+
+        <h1 class="hero-name">
+          JMS
+        <span class="name-last">Jaguines</span>
+        </h1>
+
+        <div class="hero-role-row">
+          <span class="hero-role-badge">Developer</span>
+          <span class="hero-role-divider">/</span>
+          <span class="hero-role-badge">UI Designer</span>
+          <span class="hero-role-divider">/</span>
+          <span class="hero-role-badge">Front-end</span>
+        </div>
+
+        <p class="hero-sub">
+          I build clean, purposeful digital experiences &mdash; from pixel-perfect
+          interfaces to full front-end applications. Based in Cebu, PH.
+          Ready to bring your vision to life.
+        </p>
+
+        <div class="btn-row">
+          <a href="projects.html"><button class="btn-gold">View Projects</button></a>
+          <a href="contact.html"><button class="btn-outline">Let's Talk</button></a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/jjmsa-1401" class="hero-social-icon" title="GitHub" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/jaguines.1401jms" class="hero-social-icon" title="Facebook" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/jjams1406" class="hero-social-icon" title="Instagram" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="mailto:jmsaj.061401@gmail.com" class="hero-social-icon" title="Gmail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: photo + stats -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="images/pfp.jpg" alt="John Mark Solomon A. Jaguines">
+        </div>
+        <div class="hero-photo-tag">Available for hire</div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat-card"><div class="hero-stat-num">3+</div><div class="hero-stat-label">Years exp.</div></div>
+          <div class="hero-stat-card"><div class="hero-stat-num">24</div><div class="hero-stat-label">Projects</div></div>
+          <div class="hero-stat-card"><div class="hero-stat-num">18</div><div class="hero-stat-label">Clients</div></div>
+          <div class="hero-stat-card"><div class="hero-stat-num">5</div><div class="hero-stat-label">Awards</div></div>
+        </div>
+      </div>
+
+    </div><!-- /hero-content -->
+  </div><!-- /hero -->
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

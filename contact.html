@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Jaguines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html"    >Home</a>
+      <a href="about.html"    >About</a>
+      <a href="projects.html" >Projects</a>
+      <a href="contact.html"  class='active'>Contact</a>
+      <a href="resume.html"   >Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <main class="page">
+    <div class="section-eyebrow">Get in touch</div>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-info-text">
+          Have a project in mind or just want to say hello?
+          I'm always open to new conversations and collaborations.
+        </p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">@</div>
+          <span>jmsaj.061401@gmail.com</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9679;</div>
+          <span>Cebu City, Philippines</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9670;</div>
+          <span>Available for freelance</span>
+        </div>
+      </div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text"  placeholder="Your name"  required>
+          <input type="email" placeholder="Your email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Subject" style="width:100%">
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%;">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

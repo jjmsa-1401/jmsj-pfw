@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Jaguines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html"    >Home</a>
+      <a href="about.html"    class='active'>About</a>
+      <a href="projects.html" >Projects</a>
+      <a href="contact.html"  >Contact</a>
+      <a href="resume.html"   >Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <main class="page">
+    <div class="section-eyebrow">About me</div>
+    <div class="gold-rule"></div>
+    <div class="about-grid">
+      <div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Years exp.</div></div>
+          <div class="stat-card"><div class="stat-num">24</div><div class="stat-label">Projects</div></div>
+          <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Clients</div></div>
+          <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Awards</div></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="section-title" style="margin-bottom:1rem;">Building with intention.</h2>
+        <p class="about-text">
+          I'm a designer and developer passionate about the intersection of aesthetics
+          and function. I work across the full stack with a sharp eye for detail and a
+          deep respect for user experience. Every pixel has a reason. Every interaction
+          has a purpose.
+        </p>
+        <div class="skill-row">
+          <div class="skill-meta"><span>UI / UX Design</span><span>92%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w: 92%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span>Front-end Development</span><span>85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w: 85%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span>Motion &amp; Animation</span><span>70%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w: 70%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span>Brand Identity</span><span>78%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w: 78%"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

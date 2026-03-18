@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Jaguines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html"    >Home</a>
+      <a href="about.html"    >About</a>
+      <a href="projects.html" class='active'>Projects</a>
+      <a href="contact.html"  >Contact</a>
+      <a href="resume.html"   >Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <main class="page">
+    <div class="section-eyebrow">Selected work</div>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-thumb"><span class="project-thumb-label">Preview</span></div>
+        <div class="project-body">
+          <div class="project-tag">Web Design</div>
+          <div class="project-title">Luxe Brand Identity</div>
+          <p class="project-desc">Full visual identity and website redesign for a luxury fashion label. Focused on editorial typography and refined motion.</p>
+          <a href="#" class="project-link">View case study &rarr;</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><span class="project-thumb-label">Preview</span></div>
+        <div class="project-body">
+          <div class="project-tag">App UI</div>
+          <div class="project-title">Finance Dashboard</div>
+          <p class="project-desc">Data-dense analytics dashboard designed for speed and clarity. Built with React and a custom charting system.</p>
+          <a href="#" class="project-link">View case study &rarr;</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><span class="project-thumb-label">Preview</span></div>
+        <div class="project-body">
+          <div class="project-tag">Motion</div>
+          <div class="project-title">Onboarding Flow</div>
+          <p class="project-desc">Animated onboarding sequence that increased user activation by 38%. Micro-interactions built in Framer.</p>
+          <a href="#" class="project-link">View case study &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

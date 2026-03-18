@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Jaguines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html"    >Home</a>
+      <a href="about.html"    >About</a>
+      <a href="projects.html" >Projects</a>
+      <a href="contact.html"  >Contact</a>
+      <a href="resume.html"   class='active'>Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <main class="page">
+    <div class="section-eyebrow">Curriculum Vitae</div>
+    <div class="gold-rule"></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem;">
+      <h2 class="section-title" style="margin-bottom:0;">John Mark Solomon A. Jaguines</h2>
+      <a href="#" class="btn-outline" style="white-space:nowrap;">Download PDF</a>
+    </div>
+
+    <div class="resume-layout">
+      <!-- LEFT column -->
+      <div>
+        <div class="resume-section">
+          <div class="resume-section-title">Contact</div>
+          <div class="resume-item">
+            <div class="resume-item-desc">jmsaj.061401@gmail.com</div>
+            <div class="resume-item-desc">Cebu City, Philippines</div>
+            <div class="resume-item-desc">github.com/jjmsa-1401</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Skills</div>
+          <div class="resume-skill-tags">
+            <span class="resume-tag">HTML</span>
+            <span class="resume-tag">CSS</span>
+            <span class="resume-tag">JavaScript</span>
+            <span class="resume-tag">React</span>
+            <span class="resume-tag">Figma</span>
+            <span class="resume-tag">UI / UX</span>
+            <span class="resume-tag">Git</span>
+            <span class="resume-tag">PHP</span>
+            <span class="resume-tag">MySQL</span>
+            <span class="resume-tag">Framer</span>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Languages</div>
+          <div class="resume-item">
+            <div class="resume-item-desc">Filipino — Native</div>
+            <div class="resume-item-desc">English — Professional</div>
+            <div class="resume-item-desc">Bisaya — Native</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT column -->
+      <div>
+        <div class="resume-section">
+          <div class="resume-section-title">Experience</div>
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div class="resume-item-title">Front-end Developer</div>
+              <div class="resume-item-date">2023 — Present</div>
+            </div>
+            <div class="resume-item-sub">Freelance / Self-employed</div>
+            <div class="resume-item-desc">Designing and building responsive websites and web applications for clients across various industries. Focused on clean code, accessibility, and polished UI.</div>
+          </div>
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div class="resume-item-title">UI/UX Designer</div>
+              <div class="resume-item-date">2022 — 2023</div>
+            </div>
+            <div class="resume-item-sub">Project-based</div>
+            <div class="resume-item-desc">Created wireframes, prototypes, and final designs for mobile and web applications using Figma. Conducted user research and usability testing.</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Education</div>
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div class="resume-item-title">BS Information Technology</div>
+              <div class="resume-item-date">2021 — Present</div>
+            </div>
+            <div class="resume-item-sub">University — Cebu City, PH</div>
+            <div class="resume-item-desc">Specializing in web systems and technologies. Active member of the development and design org.</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Projects</div>
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div class="resume-item-title">Portfolio Website</div>
+              <div class="resume-item-date">2025</div>
+            </div>
+            <div class="resume-item-sub">Personal project</div>
+            <div class="resume-item-desc">Designed and built this portfolio from scratch — multi-page layout, light/dark toggle, responsive design, and custom gold/black branding.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
