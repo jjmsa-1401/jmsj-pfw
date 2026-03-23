@@ -1,0 +1,29 @@
+/node_modules
+/vendor
+
+# Laravel cache
+/storage/*.key
+/storage/framework/*
+/storage/logs/*
+!/storage/framework/.gitkeep
+
+# Environment file
+.env
+
+# Build output
+/public/build
+/public/hot
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode
+.idea
+
+*.md
+*.txt

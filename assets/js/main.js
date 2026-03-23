@@ -1,42 +1,12 @@
-/* ── Theme Toggle ─────────────────────────────────────────── */
-const html        = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
-
-const saved = localStorage.getItem('theme') || 'dark';
-html.setAttribute('data-theme', saved);
-
-themeToggle.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next    = current === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-
-  /* Spin the button on each click */
-  themeToggle.classList.remove('spinning');
-  void themeToggle.offsetWidth; /* force reflow so animation restarts */
-  themeToggle.classList.add('spinning');
-  themeToggle.addEventListener('animationend', () => {
-    themeToggle.classList.remove('spinning');
-  }, { once: true });
-});
-
-/* ── Hamburger Menu ───────────────────────────────────────── */
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileNav.classList.toggle('open');
-});
-
-function closeMobile() {
-  hamburger.classList.remove('open');
-  mobileNav.classList.remove('open');
-}
+/* ═══════════════════════════════════════════════════════════
+   Main Application Script — Core functionality
+   ═══════════════════════════════════════════════════════════ */
 
 /* ── Skill Bar Animation ──────────────────────────────────── */
-const fills = document.querySelectorAll('.skill-fill');
-if (fills.length) {
+(function initSkillBars() {
+  const fills = document.querySelectorAll('.skill-fill');
+  if (fills.length === 0) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -45,36 +15,36 @@ if (fills.length) {
       }
     });
   }, { threshold: 0.3 });
+
   fills.forEach(f => observer.observe(f));
-}
+})();
 
 /* ── Contact Form ─────────────────────────────────────────── */
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
+  if (!btn) return;
+
+  const originalText = btn.textContent;
+  const originalBg = btn.style.background;
+  const originalColor = btn.style.color;
+
   btn.textContent = 'Message Sent!';
   btn.style.background = '#3a2e10';
   btn.style.color = 'var(--gold)';
+  btn.disabled = true;
+
   setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.background = '';
-    btn.style.color = '';
+    btn.textContent = originalText;
+    btn.style.background = originalBg;
+    btn.style.color = originalColor;
+    btn.disabled = false;
     e.target.reset();
   }, 3000);
 }
 
-/* ── Navbar Border on Scroll ──────────────────────────────── */
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar');
-  if (nav) {
-    nav.style.borderBottomColor = window.scrollY > 20
-      ? 'var(--border2)'
-      : 'var(--border)';
-  }
-});
-
 /* ── Project Modal ────────────────────────────────────────── */
-(function () {
+(function initProjectModal() {
   const projects = [
     {
       tag:   'Web Design',
@@ -104,6 +74,8 @@ window.addEventListener('scroll', () => {
   const modalTitle   = document.getElementById('modalTitle');
   const modalDesc    = document.getElementById('modalDesc');
   const modalClose   = document.getElementById('modalClose');
+
+  if (!modalPreview || !modalTag || !modalTitle || !modalDesc || !modalClose) return;
 
   // Clone the card SVG into the modal preview
   function openModal(idx) {
@@ -145,8 +117,12 @@ window.addEventListener('scroll', () => {
   backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 })();
-(function () {
+
+/* ── Lightning Canvas Animation ───────────────────────────── */
+(function initLightningCanvas() {
   const canvas = document.getElementById('lightning-canvas');
+  if (!canvas) return;
+
   const ctx    = canvas.getContext('2d');
   const gold   = { r: 201, g: 168, b: 76 };
   let W, H;
@@ -204,19 +180,27 @@ window.addEventListener('scroll', () => {
 
   function drawSegs(segs, alpha, width) {
     segs.forEach(([x1, y1, x2, y2]) => {
-      ctx.strokeStyle = `rgba(${gold.r},${gold.g},${gold.b},${alpha * 0.07})`; ctx.lineWidth = width * 12;
+      ctx.strokeStyle = `rgba(${gold.r},${gold.g},${gold.b},${alpha * 0.07})`; 
+      ctx.lineWidth = width * 12;
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-      ctx.strokeStyle = `rgba(${gold.r},${gold.g},${gold.b},${alpha * 0.3})`;  ctx.lineWidth = width * 3;
+      
+      ctx.strokeStyle = `rgba(${gold.r},${gold.g},${gold.b},${alpha * 0.3})`;  
+      ctx.lineWidth = width * 3;
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-      ctx.strokeStyle = `rgba(255,245,190,${alpha * 0.85})`;                   ctx.lineWidth = width * 0.6;
+      
+      ctx.strokeStyle = `rgba(255,245,190,${alpha * 0.85})`;                   
+      ctx.lineWidth = width * 0.6;
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
     });
   }
 
   let last = 0;
   function frame(ts) {
-    const dt = Math.min(ts - last, 50); last = ts;
+    const dt = Math.min(ts - last, 50); 
+    last = ts;
+    
     ctx.clearRect(0, 0, W, H);
+    
     nodes.forEach(n => {
       n.a += n.spd * dt;
       const nx = (n.px + Math.sin(n.a) * 0.08) * W;
@@ -227,6 +211,7 @@ window.addEventListener('scroll', () => {
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(nx, ny, n.r, 0, Math.PI * 2); ctx.fill();
     });
+    
     arcs.forEach(arc => {
       arc.life += 0.55 * (dt / 16);
       if (arc.life > arc.maxLife) { arc.reset(); return; }
@@ -234,6 +219,7 @@ window.addEventListener('scroll', () => {
       const alpha = Math.min(t * 10, 1) * (t > 0.5 ? Math.max(1 - (t - 0.5) * 3.5, 0) : 1);
       drawSegs(arc.segments, alpha, 1.3);
       arc.branches.forEach(b => drawSegs(b, alpha * 0.45, 0.75));
+      
       if (t < 0.12) {
         const fa = (1 - t / 0.12) * 0.55;
         ctx.fillStyle = `rgba(255,245,190,${fa})`;

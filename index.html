@@ -7,20 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="images/my-logo.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/my-logo.ico">
 </head>
 <body>
 
-  <!-- Lightning canvas — fixed behind everything -->
   <canvas id="lightning-canvas"></canvas>
 
   <nav class="navbar">
     <div class="logo">
-      <a href="index.html"><img src="images/my-logo.png" alt="Jaguines"></a>
+      <a href="index.html"><img src="assets/images/my-logo.png" alt="Jaguines"></a>
     </div>
     <div class="nav-center">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
@@ -28,15 +27,30 @@
     </div>
     <div class="nav-right">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-        <span class="toggle-icon icon-moon">🌙</span>
-        <span class="toggle-icon icon-sun">☀️</span>
+        <svg class="toggle-icon icon-moon" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.75"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="toggle-icon icon-sun" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.75"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1"  x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1"  y1="12" x2="3"  y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>
+          <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+        </svg>
       </button>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -64,11 +78,11 @@
 
         <h1 class="hero-name">
           JMS
-        <span class="name-last">Jaguines</span>
+          <span class="name-last">Jaguines</span>
         </h1>
 
         <div class="hero-role-row">
-          <span class="hero-role-badge">Developer</span>
+          <span class="hero-role-badge">Web Developer</span>
           <span class="hero-role-divider">/</span>
           <span class="hero-role-badge">UI Designer</span>
           <span class="hero-role-divider">/</span>
@@ -76,9 +90,7 @@
         </div>
 
         <p class="hero-sub">
-          I build clean, purposeful digital experiences &mdash; from pixel-perfect
-          interfaces to full front-end applications. Based in Cebu, PH.
-          Ready to bring your vision to life.
+          I'm a 4th Year BS Information Technology Student
         </p>
 
         <div class="btn-row">
@@ -104,10 +116,73 @@
 
       <!-- RIGHT: photo + stats -->
       <div class="hero-photo-wrap">
+
+        <!-- Dual-image hover frame -->
         <div class="hero-photo-frame">
-          <img src="images/pfp.jpg" alt="John Mark Solomon A. Jaguines">
+          <!-- Formal photo: default, fades out on hover -->
+          <img src="assets/images/pfp.png"       class="photo-formal" alt="JMS Jaguines">
+          <!-- Hoodie photo: hidden, fades in on hover -->
+          <img src="assets/images/hoodie-me.png" class="photo-hoodie"  alt="JMS Jaguines">
+          <!-- Cream wash — only visible in light mode over the dark hoodie bg -->
+          <div class="photo-light-wash"></div>
+
+          <!-- Spiky sporty border overlay — overflow:visible lets spikes poke outside -->
+          <svg class="photo-spike-border" viewBox="0 0 260 320"
+               xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="visible">
+            <defs>
+              <filter id="spikeglow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Thin inner accent rectangle -->
+            <rect x="5" y="5" width="250" height="310" fill="none"
+                  stroke="#C9A84C" stroke-width="0.5" opacity="0.2" class="spike-inner"/>
+
+            <!-- TOP-LEFT: bracket + diagonal spike tip -->
+            <path class="spike-bracket" d="M 0,58 L 0,0 L 58,0"
+                  fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+            <polygon class="spike-tip" points="-13,-13 0,8 8,0" fill="#C9A84C"/>
+            <path class="spike-inner-accent" d="M 16,36 L 16,16 L 36,16"
+                  fill="none" stroke="#C9A84C" stroke-width="0.9" opacity="0.3" stroke-linecap="square"/>
+
+            <!-- TOP-RIGHT: bracket + diagonal spike tip -->
+            <path class="spike-bracket" d="M 202,0 L 260,0 L 260,58"
+                  fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+            <polygon class="spike-tip" points="273,-13 260,8 252,0" fill="#C9A84C"/>
+            <path class="spike-inner-accent" d="M 244,16 L 244,36 M 224,16 L 244,16"
+                  fill="none" stroke="#C9A84C" stroke-width="0.9" opacity="0.3" stroke-linecap="square"/>
+
+            <!-- BOTTOM-LEFT: bracket + diagonal spike tip -->
+            <path class="spike-bracket" d="M 0,262 L 0,320 L 58,320"
+                  fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+            <polygon class="spike-tip" points="-13,333 8,320 0,312" fill="#C9A84C"/>
+            <path class="spike-inner-accent" d="M 16,284 L 16,304 L 36,304"
+                  fill="none" stroke="#C9A84C" stroke-width="0.9" opacity="0.3" stroke-linecap="square"/>
+
+            <!-- BOTTOM-RIGHT: bracket + diagonal spike tip -->
+            <path class="spike-bracket" d="M 202,320 L 260,320 L 260,262"
+                  fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+            <polygon class="spike-tip" points="273,333 252,320 260,312" fill="#C9A84C"/>
+            <path class="spike-inner-accent" d="M 244,304 L 244,284 M 224,304 L 244,304"
+                  fill="none" stroke="#C9A84C" stroke-width="0.9" opacity="0.3" stroke-linecap="square"/>
+
+            <!-- TOP center tick -->
+            <line class="spike-tick" x1="117" y1="-10" x2="143" y2="-10"
+                  stroke="#C9A84C" stroke-width="1.8" stroke-linecap="square" opacity="0.65"/>
+
+            <!-- BOTTOM center tick -->
+            <line class="spike-tick" x1="117" y1="330" x2="143" y2="330"
+                  stroke="#C9A84C" stroke-width="1.8" stroke-linecap="square" opacity="0.65"/>
+          </svg>
         </div>
-        <div class="hero-photo-tag">Available for hire</div>
+
+        <div class="hero-photo-tag">
+          <span class="hero-photo-tag-dot"></span>
+          Available for hire
+        </div>
+
         <div class="hero-stats-grid">
           <div class="hero-stat-card"><div class="hero-stat-num">3+</div><div class="hero-stat-label">Years exp.</div></div>
           <div class="hero-stat-card"><div class="hero-stat-num">24</div><div class="hero-stat-label">Projects</div></div>
@@ -116,10 +191,12 @@
         </div>
       </div>
 
-    </div><!-- /hero-content -->
-  </div><!-- /hero -->
+    </div>
+  </div>
 
-  <script src="script.js"></script>
-  
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/main.js"></script>
+
 </body>
 </html>
